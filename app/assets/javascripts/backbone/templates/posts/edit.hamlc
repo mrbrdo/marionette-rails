@@ -1,0 +1,13 @@
+%h1 Edit post
+%form#edit-post{:name => "post"}
+  .field
+    %label{:for => "title"} title:
+    %input#title{:name => "title", :type => "text"}/
+    %span.error-msg
+  .field
+    %label{:for => "content"} content:
+    %input#content{:name => "content", :type => "text"}/
+    %span.error-msg
+  .actions
+    %input{:type => "submit", :value => "Update Post"}/
+%a{:href => "/index"} Back

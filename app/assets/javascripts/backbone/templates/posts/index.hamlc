@@ -1,0 +1,14 @@
+%h1 Listing posts
+
+%table#posts-table
+  %thead
+    %tr
+      %th Title
+      %th Content
+      %th
+      %th
+      %th
+  %tbody
+%br/
+
+%a{:href => "/new"} New Post

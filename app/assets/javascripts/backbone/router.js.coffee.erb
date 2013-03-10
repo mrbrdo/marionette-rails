@@ -1,0 +1,31 @@
+class App.Routers.Main extends Backbone.Marionette.AppRouter
+  appRoutes: <%= BackboneRoutes.instance.to_routes %>
+
+class App.Controllers.Main
+  constructor: ->
+    @posts = new App.Collections.Posts
+    @posts.reset(App.posts)
+    App.posts = null
+
+  showView: (view)->
+    App.mainRegion.show view
+
+  index: ->
+    view = new App.Views.Posts.Index
+      collection: @posts
+    @showView view
+
+  show: (id) ->
+    view = new App.Views.Posts.Show
+      model: @posts.get(id)
+    @showView view
+
+  new: ->
+    view = new App.Views.Posts.New
+      collection: @posts
+    @showView view
+
+  edit: (id) ->
+    view = new App.Views.Posts.Edit
+      model: @posts.get(id)
+    @showView view

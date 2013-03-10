@@ -1,0 +1,7 @@
+%p
+  %b Title:
+  %span#title
+%p
+  %b Content:
+  %span#content
+%a{:href => "/index"} Back

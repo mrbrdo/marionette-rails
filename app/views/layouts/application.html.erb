@@ -3,12 +3,15 @@
 <head>
   <title>MarionetteRails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+<%= javascript_include_tag "application" %>
+<script>
+  App.posts = <%=raw Post.all.to_json %>;
+</script>
 </body>
 </html>
